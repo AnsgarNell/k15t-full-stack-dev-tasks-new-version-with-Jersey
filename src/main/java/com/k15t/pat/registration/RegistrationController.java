@@ -1,29 +1,25 @@
 package com.k15t.pat.registration;
 
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.io.StringWriter;
-
-
-@RestController
+@Controller
+@RequestMapping("/registration")
 public class RegistrationController {
 
-    @Autowired private VelocityEngine velocityEngine;
-
-
-    @RequestMapping("/registration.html")
+    @GetMapping
     public String registration() {
+        return "registration";
+    }
 
-        Template template = velocityEngine.getTemplate("templates/registration.vm");
-        VelocityContext context = new VelocityContext();
-        StringWriter writer = new StringWriter();
-        template.merge(context, writer);
-
-        return writer.toString();
+    // Extend the current resource to receive and store the data in memory.
+    // Return a success information to the user including the entered information.
+    // In case of the address split the information into a better format/structure
+    // for better handling later on.
+    @PostMapping
+    public String save() {
+        return "result";
     }
 }

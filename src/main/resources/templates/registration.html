@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <title>PAT Registration</title>
         <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="public/css/app.css">
     </head>
     <body>
-        #parse ("common/header.vm")
+        <header th:insert="common/header.html"> </header>
         <div class="bannerText">
             <h1>
                 <span>Java Meetup Registration</span>
@@ -22,6 +22,6 @@
             - Phone number
             <p><input class="btn btn-default" type="submit" value="Submit"></p>
         </form>
-        #parse ("common/footer.vm")
+        <footer th:insert="common/footer.html"> </footer>
     </body>
 </html>
