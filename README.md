@@ -8,23 +8,23 @@ fields as well as the backend to store the data in memory. But you are here to
 help us out and get it done.
  
 ## But *what* should I do exactly?
-Extend the form with the required fields (see registration.vm for further details) and 
-store the entered information by using a REST endpoint. Giv the user feedback if the
+Extend the form with the required fields (see registration.html for further details) and 
+store the entered information by using a MVC Controller. Give the user feedback if the
 save was successful or in case of an error. Ensure mandatory fields will be entered
 and verify the entered values are reasonable e.g. the name must not contains numbers.
 
 To start with, please see the already created files and classes. Especially:
 
-* com.k15t.pat.registration: The package includes a REST endpoint and a controller
-* resources/templates: The folder includes the initial velocity templates for the registration page 
+* com.k15t.pat.registration: The package includes a MVC controller
+* resources/templates: The folder includes the initial Thymeleaf templates for the registration page 
 
 The Maven build creates a executable jar which includes the whole runtime (tomcat) to run the app.
 You can start it with java -jar registration-0.1.0.jar. If the application is started the pages are
-available under http://localhost:8080/registration.html
+available under http://localhost:8080/registration
 
 ## A few words about the technology stack
 The application is build on top of Spring Boot (http://projects.spring.io/spring-boot/) providing a runtime container. 
-Furthermore Jersey for implementing REST resources, Velocity for templating pages and jQuery/Bootstrap is included and 
+Furthermore Spring Web MVC for implementing the controller, Thymeleaf for templating pages and jQuery/Bootstrap is included and 
 can be used as well. Building and packaging the application is done with Maven. 
 
 ## What's expected of me?
